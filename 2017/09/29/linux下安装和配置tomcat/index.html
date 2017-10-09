@@ -15,12 +15,12 @@
 <meta property="og:url" content="http://yoursite.com/2017/09/29/linux下安装和配置tomcat/index.html">
 <meta property="og:site_name" content="我的地盘我做主">
 <meta property="og:description" content="说明：linux系统为centOs 6.4,tomcat版本为 7.0.81，jdk版本为 7 第一次安装时我用了最新的jdk 9，搞了很长时间都启动不了，最后发现是jdk版本太高。 安装JDK 下载jdk安装包，以jdk-7u80-linux-x64.rpm为例，下载后执行命令：  rpm -ivh jdk-7u80-linux-x64.rpm  安装完成后，配置环境变量：  vi /etc/p">
-<meta property="og:image" content="http://yoursite.com/2017/09/29/linux下安装和配置tomcat/tomcat.png">
+<meta property="og:image" content="http://yoursite.com/images/tomcat.png">
 <meta property="og:updated_time" content="2017-09-29T10:36:34.718Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux下安装和配置tomcat">
 <meta name="twitter:description" content="说明：linux系统为centOs 6.4,tomcat版本为 7.0.81，jdk版本为 7 第一次安装时我用了最新的jdk 9，搞了很长时间都启动不了，最后发现是jdk版本太高。 安装JDK 下载jdk安装包，以jdk-7u80-linux-x64.rpm为例，下载后执行命令：  rpm -ivh jdk-7u80-linux-x64.rpm  安装完成后，配置环境变量：  vi /etc/p">
-<meta name="twitter:image" content="http://yoursite.com/2017/09/29/linux下安装和配置tomcat/tomcat.png">
+<meta name="twitter:image" content="http://yoursite.com/images/tomcat.png">
   
     <link rel="alternative" href="/atom.xml" title="我的地盘我做主" type="application/atom+xml">
   
@@ -198,7 +198,7 @@
 <li><p>此时即可启动Tomcat</p>
 <p> <code>cd /opt/tomcat/apache-tomcat-7.0.81/bin</code><br> <code>./startup.sh</code></p>
 </li>
-<li><p>在本地浏览器中输入localhost:8080,即可看到默认页面<br><img src="/2017/09/29/linux下安装和配置tomcat/tomcat.png" alt=""></p>
+<li><p>在本地浏览器中输入localhost:8080,即可看到默认页面<br><img src="/images/tomcat.png" alt=""></p>
 </li>
 <li><p>如果<strong>连接失败</strong>，首先检查是否8080端口被占用</p>
 <p> <code>netstate -anp|grep 8080</code></p>

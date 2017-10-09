@@ -15,15 +15,15 @@
 <meta property="og:url" content="http://yoursite.com/2017/10/09/linux创建桌面快捷方式/index.html">
 <meta property="og:site_name" content="我的地盘我做主">
 <meta property="og:description" content="系统：CentOS 6.4 桌面环境：gnome本文以eclipse为例，使用命令行创建桌面快捷方式 桌面快捷方式文件放置于/usr/share/applications或者~/.local/share/applications处。前一个目录存储的桌面快捷方式每个用户都可以使用，而后一个目录则含有仅仅为特定用户创建的快捷方式。 要为特定程序或命令创建桌面快捷方式，你可以使用任意文本编辑器创建一个.">
-<meta property="og:image" content="http://yoursite.com/2017/10/09/linux创建桌面快捷方式/head.jpg">
-<meta property="og:image" content="http://yoursite.com/2017/10/09/linux创建桌面快捷方式/快捷方式2.png">
-<meta property="og:image" content="http://yoursite.com/2017/10/09/linux创建桌面快捷方式/快捷方式3.png">
-<meta property="og:image" content="http://yoursite.com/2017/10/09/linux创建桌面快捷方式/快捷方式4.png">
-<meta property="og:updated_time" content="2017-10-09T07:40:35.731Z">
+<meta property="og:image" content="http://yoursite.com/images/快捷方式1.png">
+<meta property="og:image" content="http://yoursite.com/images/快捷方式2.png">
+<meta property="og:image" content="http://yoursite.com/images/快捷方式3.png">
+<meta property="og:image" content="http://yoursite.com/images/快捷方式4.png">
+<meta property="og:updated_time" content="2017-10-09T07:58:24.854Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux在桌面上创建应用程序快捷方式">
 <meta name="twitter:description" content="系统：CentOS 6.4 桌面环境：gnome本文以eclipse为例，使用命令行创建桌面快捷方式 桌面快捷方式文件放置于/usr/share/applications或者~/.local/share/applications处。前一个目录存储的桌面快捷方式每个用户都可以使用，而后一个目录则含有仅仅为特定用户创建的快捷方式。 要为特定程序或命令创建桌面快捷方式，你可以使用任意文本编辑器创建一个.">
-<meta name="twitter:image" content="http://yoursite.com/2017/10/09/linux创建桌面快捷方式/head.jpg">
+<meta name="twitter:image" content="http://yoursite.com/images/快捷方式1.png">
   
     <link rel="alternative" href="/atom.xml" title="我的地盘我做主" type="application/atom+xml">
   
@@ -179,10 +179,10 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">[Desktop Entry]</div><div class="line">Encoding=UTF-8</div><div class="line">Version=1.0                                     #version </div><div class="line">Name[en_US]=yEd                                 #name of an app.</div><div class="line">GenericName=GUI Port Scanner                    #longer name of an app.</div><div class="line">Exec=java -jar /opt/yed-3.11.1/yed.jar          #command used to launch an app.</div><div class="line">Terminal=false                                  #whether an app requires to be run in a terminal</div><div class="line">Icon[en_US]=/opt/yed-3.11.1/icons/yicon32.png   #location of icon file.</div><div class="line">Type=Application                                #type</div><div class="line">Categories=Application;Network;Security;        #categories in which this app should be listed.</div><div class="line">Comment[en_US]=yEd Graph Editor                 #comment which appears as a tooltip.</div></pre></td></tr></table></figure>
 <h2 id="1-在-usr-share-applications下创建Eclipse-desktop文件"><a href="#1-在-usr-share-applications下创建Eclipse-desktop文件" class="headerlink" title="1.在/usr/share/applications下创建Eclipse.desktop文件"></a>1.在/usr/share/applications下创建Eclipse.desktop文件</h2><p><code>touch /usr/share/applications Eclipse.desktop</code></p>
 <h2 id="2-用任何编辑器编辑Eclipse-desktop文件，写入以下内容"><a href="#2-用任何编辑器编辑Eclipse-desktop文件，写入以下内容" class="headerlink" title="2.用任何编辑器编辑Eclipse.desktop文件，写入以下内容"></a>2.用任何编辑器编辑Eclipse.desktop文件，写入以下内容</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">[Desktop Entry]</div><div class="line">Name=eclipse                             #快捷方式显示名称</div><div class="line">Name[zh_CN]=Eclipse                      #中文名称</div><div class="line">Comment=eclipse Client                   #鼠标悬停时说明</div><div class="line">Exec=/usr/local/eclipse/eclipse          #应用程序的绝对路径</div><div class="line">Icon=/usr/local/eclipse/icon.xpm         #应用程序图标的绝对路径</div><div class="line">Terminal=false                           #是否用命令行启动</div><div class="line">Type=Application                         #类型为程序</div><div class="line">Categories=Application;                  #分类</div><div class="line">Encoding=UTF-8                           #编码</div></pre></td></tr></table></figure>
-<p>写入时要特别注意，<strong>后面不能有空格</strong>，否则会不识别，出现这种情况：<br><img src="/2017/10/09/linux创建桌面快捷方式/head.jpg" alt=""></p>
-<p>编辑完，保存后会在<strong>/usr/share/applications</strong>这个文件夹下出现eclipse的图标<br><img src="/2017/10/09/linux创建桌面快捷方式/快捷方式2.png" alt=""><br>此时双击这个图标就可以启动Eclipse了！</p>
+<p>写入时要特别注意，<strong>后面不能有空格</strong>，否则会不识别，出现这种情况：<br><img src="/images/快捷方式1.png" alt=""></p>
+<p>编辑完，保存后会在<strong>/usr/share/applications</strong>这个文件夹下出现eclipse的图标<br><img src="/images/快捷方式2.png" alt=""><br>此时双击这个图标就可以启动Eclipse了！</p>
 <h2 id="3-将这个图标拷贝到桌面上"><a href="#3-将这个图标拷贝到桌面上" class="headerlink" title="3. 将这个图标拷贝到桌面上"></a>3. 将这个图标拷贝到桌面上</h2><p><code>cp /usr/share/applications/Eclipse.desktop /home/username/桌面</code></p>
-<p>命令中<strong>username</strong>换成你自己的名字<br>拷贝完成后可能会出现如下情况：<br><img src="/2017/10/09/linux创建桌面快捷方式/快捷方式3.png" alt=""><br>双击后弹出提示：<br><img src="/2017/10/09/linux创建桌面快捷方式/快捷方式4.png" alt=""><br>这是由于权限的问题，所以修改权限</p>
+<p>命令中<strong>username</strong>换成你自己的名字<br>拷贝完成后可能会出现如下情况：<br><img src="/images/快捷方式3.png" alt=""><br>双击后弹出提示：<br><img src="/images/快捷方式4.png" alt=""><br>这是由于权限的问题，所以修改权限</p>
 <p><code>chmod 777 /home/username/桌面/Eclipse.desktop</code></p>
 <p>修改后就大功告成了！</p>
 
