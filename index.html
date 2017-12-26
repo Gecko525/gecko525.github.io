@@ -145,6 +145,66 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-windows下git-openssh搭建远程仓库" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/22/windows下git-openssh搭建远程仓库/">windows下git+openssh搭建远程仓库</a>
+    </h1>
+  
+
+        
+        <a href="/2017/12/22/windows下git-openssh搭建远程仓库/" class="archive-article-date">
+  	<time datetime="2017-12-22T11:53:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1-安装git和openssh"><a href="#1-安装git和openssh" class="headerlink" title="1.安装git和openssh"></a>1.安装git和openssh</h2><h2 id="2-配置openssh"><a href="#2-配置openssh" class="headerlink" title="2.配置openssh"></a>2.配置openssh</h2><blockquote>
+<p><a href="http://blog.51cto.com/leomars/1211702">http://blog.51cto.com/leomars/1211702</a></p>
+</blockquote>
+<p>开启服务：net start opensshd</p>
+<p>关闭服务：net stop opensshd</p>
+<p>连接测试：ssh Administrator@192.168.28.188</p>
+<p>此处会跳转到默认的home&gt;Administrator目录</p>
+<p>尝试修改默认home目录失败<br>
+        
+          <a class="article-more-a" href="/2017/12/22/windows下git-openssh搭建远程仓库/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/12/22/windows下git-openssh搭建远程仓库/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-linux创建桌面快捷方式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -167,17 +227,10 @@
       
         <p>系统：CentOS 6.4 桌面环境：gnome<br>本文以eclipse为例，使用<strong>命令行</strong>创建桌面快捷方式</p>
 <p>桌面快捷方式文件放置于<strong>/usr/share/applications</strong>或者<strong>~/.local/share/applications</strong>处。前一个目录存储的桌面快捷方式每个用户都可以使用，而后一个目录则含有仅仅为特定用户创建的快捷方式。</p>
-<p>要为特定程序或命令创建桌面快捷方式，你可以使用任意文本编辑器创建一个<strong>.desktop</strong>文件，然后把它放到<strong>/usr/share/applications</strong>或者<strong>~/.local/share/applications</strong>处。一个典型的<strong>.desktop</strong>文件如下所示。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">[Desktop Entry]</div><div class="line">Encoding=UTF-8</div><div class="line">Version=1.0                                     #version </div><div class="line">Name[en_US]=yEd                                 #name of an app.</div><div class="line">GenericName=GUI Port Scanner                    #longer name of an app.</div><div class="line">Exec=java -jar /opt/yed-3.11.1/yed.jar          #command used to launch an app.</div><div class="line">Terminal=false                                  #whether an app requires to be run in a terminal</div><div class="line">Icon[en_US]=/opt/yed-3.11.1/icons/yicon32.png   #location of icon file.</div><div class="line">Type=Application                                #type</div><div class="line">Categories=Application;Network;Security;        #categories in which this app should be listed.</div><div class="line">Comment[en_US]=yEd Graph Editor                 #comment which appears as a tooltip.</div></pre></td></tr></table></figure>
-<h2 id="1-在-usr-share-applications下创建Eclipse-desktop文件"><a href="#1-在-usr-share-applications下创建Eclipse-desktop文件" class="headerlink" title="1.在/usr/share/applications下创建Eclipse.desktop文件"></a>1.在/usr/share/applications下创建Eclipse.desktop文件</h2><p><code>touch /usr/share/applications Eclipse.desktop</code></p>
-<h2 id="2-用任何编辑器编辑Eclipse-desktop文件，写入以下内容"><a href="#2-用任何编辑器编辑Eclipse-desktop文件，写入以下内容" class="headerlink" title="2.用任何编辑器编辑Eclipse.desktop文件，写入以下内容"></a>2.用任何编辑器编辑Eclipse.desktop文件，写入以下内容</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">[Desktop Entry]</div><div class="line">Name=eclipse                             #快捷方式显示名称</div><div class="line">Name[zh_CN]=Eclipse                      #中文名称</div><div class="line">Comment=eclipse Client                   #鼠标悬停时说明</div><div class="line">Exec=/usr/local/eclipse/eclipse          #应用程序的绝对路径</div><div class="line">Icon=/usr/local/eclipse/icon.xpm         #应用程序图标的绝对路径</div><div class="line">Terminal=false                           #是否用命令行启动</div><div class="line">Type=Application                         #类型为程序</div><div class="line">Categories=Application;                  #分类</div><div class="line">Encoding=UTF-8                           #编码</div></pre></td></tr></table></figure>
-<p>写入时要特别注意，<strong>后面不能有空格</strong>，否则会不识别，出现这种情况：<br><img src="/images/快捷方式1.png" alt=""></p>
-<p>编辑完，保存后会在<strong>/usr/share/applications</strong>这个文件夹下出现eclipse的图标<br><img src="/images/快捷方式2.png" alt=""><br>此时双击这个图标就可以启动Eclipse了！</p>
-<h2 id="3-将这个图标拷贝到桌面上"><a href="#3-将这个图标拷贝到桌面上" class="headerlink" title="3. 将这个图标拷贝到桌面上"></a>3. 将这个图标拷贝到桌面上</h2><p><code>cp /usr/share/applications/Eclipse.desktop /home/username/桌面</code></p>
-<p>命令中<strong>username</strong>换成你自己的名字<br>拷贝完成后可能会出现如下情况：<br><img src="/images/快捷方式3.png" alt=""><br>双击后弹出提示：<br><img src="/images/快捷方式4.png" alt=""><br>这是由于权限的问题，所以修改权限</p>
-<p><code>chmod 777 /home/username/桌面/Eclipse.desktop</code></p>
-<p>修改后就大功告成了！</p>
-
+<p>要为特定程序或命令创建桌面快捷方式，你可以使用任意文本编辑器创建一个<strong>.desktop</strong>文件，然后把它放到<strong>/usr/share/applications</strong>或者<strong>~/.local/share/applications</strong>处。一个典型的<strong>.desktop</strong>文件如下所示。<br>
+        
+          <a class="article-more-a" href="/2017/10/09/linux创建桌面快捷方式/#more">more >></a>
+        
       
 
       
@@ -235,42 +288,11 @@
 </li>
 <li><p>安装完成后，配置环境变量：</p>
 <p> <code>vi /etc/profile</code></p>
-<p> 在底部添加如下内容：</p>
-<p>  export JAVA_HOME=/usr/java/jdk1.7.0_80<br>  export PATH=$PATH:$JAVA_HOME/bin<br>  export JAVA_HOME CLASSPATH PATH</p>
-<p> wq保存退出</p>
-</li>
-<li><p>使用以下命令使配置文件生效</p>
-<p> <code>source /etc/profile</code></p>
-</li>
-<li><p>分别输入命令 java -version 和 javac -version 检测是否安装成功！</p>
 </li>
 </ol>
-<h2 id="安装tomcat"><a href="#安装tomcat" class="headerlink" title="安装tomcat"></a>安装tomcat</h2><ol>
-<li><p>下载软件包，此处以 apache-tomcat-7.0.81.tar.gz 为例，下载后先建一个文件夹</p>
-<p> <code>cd /opt</code><br> <code>mkdir tomcat</code></p>
-</li>
-<li><p>将下载的软件包移动到tomcat文件夹下，并解压</p>
-<p> <code>cp /软件包所在路径 /opt/tomcat</code><br> <code>tar -zxvf apache-tomcat-7.0.81.tar.gz</code></p>
-</li>
-<li><p>此时即可启动Tomcat</p>
-<p> <code>cd /opt/tomcat/apache-tomcat-7.0.81/bin</code><br> <code>./startup.sh</code></p>
-</li>
-<li><p>在本地浏览器中输入localhost:8080,即可看到默认页面<br><img src="/images/tomcat.png" alt=""></p>
-</li>
-<li><p>如果<strong>连接失败</strong>，首先检查是否8080端口被占用</p>
-<p> <code>netstate -anp|grep 8080</code></p>
-<p> 如果被占用，则可以杀死占用进程或修改tomcat端口。此处选择后者</p>
-<p> <code>cd /opt/tomcat/apache-tomcat-7.0.81/conf</code><br> <code>vi server.xml</code></p>
-<p> 修改以下代码中的8080为8081或其他未被占用的端口,然后重新执行./startup.sh即可</p>
-<p> <code>&lt;Connector port=&quot;8080&quot; protocol=&quot;HTTP/1.1&quot;</code><br>  <code>connectionTimeout=&quot;20000&quot;</code><br> <code>redirectPort=&quot;8443&quot; \&gt;</code><br> <code>&lt;!-- A &quot;Connector&quot; using the shared thread pool--&gt;</code></p>
-</li>
-<li><p>此时在远程访问一般是不可访问的，还需配置防火墙，可关闭防火墙或开启8080端口，如需访问mysql还可在此处加入3306端口</p>
-<p> <code>vi /etc/sysconfig/iptables</code><br>在-A INPUT -m state –state NEW -m tcp -p tcp –dport 22 -j ACCEPT这条命令下添加以下命令：</p>
-<p>  <code>-A INPUT -m state –state NEW -m tcp -p tcp –dport 8080 -j ACCEPT</code><br>  <code>-A INPUT -m state –state NEW -m tcp -p tcp –dport 3306 -j ACCEPT</code></p>
-</li>
-<li>重启防火墙使配置生效<br> <code>/etc/init.d/iptables restart</code><h2 id="停止tomcat"><a href="#停止tomcat" class="headerlink" title="停止tomcat"></a>停止tomcat</h2>进入tomcat的bin目录执行shutdown.sh：<br> <code>cd /opt/tomcat/apache-tomcat-7.0.81/bin</code><br> <code>./shutdown.sh</code></li>
-</ol>
-
+        
+          <a class="article-more-a" href="/2017/09/29/linux下安装和配置tomcat/#more">more >></a>
+        
       
 
       
@@ -679,60 +701,10 @@
 
 
   
-    <article id="post-你好，博客！" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/03/12/你好，博客！/">你好，博客！</a>
-    </h1>
-  
-
-        
-        <a href="/2015/03/12/你好，博客！/" class="archive-article-date">
-  	<time datetime="2015-03-12T14:37:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-03-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="第一个博客"><a href="#第一个博客" class="headerlink" title="第一个博客"></a>第一个博客</h2><pre><code>这是我的第一个博客，以后要及时更新，哈哈哈！
-</code></pre><blockquote>
-<p>不积跬步,无以至千里;<br><br>不积小流,无以成江海</p>
-</blockquote>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2015/03/12/你好，博客！/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    </nav>
   
 
 
