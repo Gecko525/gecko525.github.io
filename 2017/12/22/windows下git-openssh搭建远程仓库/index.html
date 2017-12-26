@@ -15,7 +15,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/12/22/windows下git-openssh搭建远程仓库/index.html">
 <meta property="og:site_name" content="我的地盘我做主">
 <meta property="og:description" content="1.安装git和openssh2.配置openssh http://blog.51cto.com/leomars/1211702  开启服务：net start opensshd 关闭服务：net stop opensshd 连接测试：ssh Administrator@192.168.28.188 此处会跳转到默认的home&amp;gt;Administrator目录 尝试修改默认home目录失败">
-<meta property="og:updated_time" content="2017-12-22T12:32:32.405Z">
+<meta property="og:updated_time" content="2017-12-26T11:09:32.226Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="windows下git+openssh搭建远程仓库">
 <meta name="twitter:description" content="1.安装git和openssh2.配置openssh http://blog.51cto.com/leomars/1211702  开启服务：net start opensshd 关闭服务：net stop opensshd 连接测试：ssh Administrator@192.168.28.188 此处会跳转到默认的home&amp;gt;Administrator目录 尝试修改默认home目录失败">
@@ -200,8 +200,8 @@ git push origin master
 <pre><code>git remote add origin Administartor@192.168.28.188:test.git
 git remote set-url origin Administrator@192.168.28.188:test.git
 git remote rm origin
-</code></pre><h2 id="5-待解决问题"><a href="#5-待解决问题" class="headerlink" title="5.待解决问题"></a>5.待解决问题</h2><p>1）home目录未改变，所以远程仓库只能放到home&gt;administrator这个文件夹中</p>
-<p>2）只能使用密码登录，公钥没有试验成功（可参考上边提到的第一篇博客）</p>
+</code></pre><h2 id="5-使用密钥连接"><a href="#5-使用密钥连接" class="headerlink" title="5.使用密钥连接"></a>5.使用密钥连接</h2><p>参照上边第一个博客地址，修改openssh配置文件,然后把要验证的机器的公钥拷贝到.ssh/authorized_keys中，重启服务即可<br>生成密钥指令：<br>    ssh-keygen -t rsa -b 2048</p>
+<h2 id="5-待解决问题"><a href="#5-待解决问题" class="headerlink" title="5.待解决问题"></a>5.待解决问题</h2><p>1）home目录未改变，所以远程仓库只能放到home&gt;administrator这个文件夹中</p>
 
       
 
