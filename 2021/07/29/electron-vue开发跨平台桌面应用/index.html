@@ -8,13 +8,13 @@
   <link rel="dns-prefetch" href="http://gecko525.github.io">
   <title>Electron + Vue开发跨平台桌面应用 | 欢迎来到 Gecko Wu 的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="ElectronElectron是一个使用JavaScript、HTML和CSS构建桌面应用程序的框架。通过将Chromium和Node.js嵌入其二进制文件，Electron允许您维护一个JavaScript代码库，并创建在Windows、macOS和Linux上工作的跨平台应用程序—无需本地开发经验。Electron 官网 Electron + Vue在使用 Electron 进行开发之前，需">
+  <meta name="description" content="ElectronElectron是一个使用JavaScript、HTML和CSS构建桌面应用程序的框架。通过将Chromium和Node.js嵌入其二进制文件，Electron允许您维护一个JavaScript代码库，并创建在Windows、macOS和Linux上工作的跨平台应用程序—无需本地开发经验。Electron 官网">
 <meta name="keywords" content="electron,vue">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Electron + Vue开发跨平台桌面应用">
 <meta property="og:url" content="http://gecko525.github.io/2021/07/29/electron-vue开发跨平台桌面应用/index.html">
 <meta property="og:site_name" content="欢迎来到 Gecko Wu 的博客">
-<meta property="og:description" content="ElectronElectron是一个使用JavaScript、HTML和CSS构建桌面应用程序的框架。通过将Chromium和Node.js嵌入其二进制文件，Electron允许您维护一个JavaScript代码库，并创建在Windows、macOS和Linux上工作的跨平台应用程序—无需本地开发经验。Electron 官网 Electron + Vue在使用 Electron 进行开发之前，需">
+<meta property="og:description" content="ElectronElectron是一个使用JavaScript、HTML和CSS构建桌面应用程序的框架。通过将Chromium和Node.js嵌入其二进制文件，Electron允许您维护一个JavaScript代码库，并创建在Windows、macOS和Linux上工作的跨平台应用程序—无需本地开发经验。Electron 官网">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://gecko525.github.io/2021/07/29/electron-vue开发跨平台桌面应用/installSuccess.png">
 <meta property="og:image" content="http://gecko525.github.io/2021/07/29/electron-vue开发跨平台桌面应用/packagejson.png">
@@ -24,10 +24,10 @@
 <meta property="og:image" content="http://gecko525.github.io/2021/07/29/electron-vue开发跨平台桌面应用/unzip.png">
 <meta property="og:image" content="http://gecko525.github.io/2021/07/29/electron-vue开发跨平台桌面应用/build.png">
 <meta property="og:image" content="http://gecko525.github.io/2021/07/29/electron-vue开发跨平台桌面应用/exe.png">
-<meta property="og:updated_time" content="2021-07-29T07:36:19.713Z">
+<meta property="og:updated_time" content="2021-07-29T08:48:45.976Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Electron + Vue开发跨平台桌面应用">
-<meta name="twitter:description" content="ElectronElectron是一个使用JavaScript、HTML和CSS构建桌面应用程序的框架。通过将Chromium和Node.js嵌入其二进制文件，Electron允许您维护一个JavaScript代码库，并创建在Windows、macOS和Linux上工作的跨平台应用程序—无需本地开发经验。Electron 官网 Electron + Vue在使用 Electron 进行开发之前，需">
+<meta name="twitter:description" content="ElectronElectron是一个使用JavaScript、HTML和CSS构建桌面应用程序的框架。通过将Chromium和Node.js嵌入其二进制文件，Electron允许您维护一个JavaScript代码库，并创建在Windows、macOS和Linux上工作的跨平台应用程序—无需本地开发经验。Electron 官网">
 <meta name="twitter:image" content="http://gecko525.github.io/2021/07/29/electron-vue开发跨平台桌面应用/installSuccess.png">
   
     <link rel="alternative" href="/atom.xml" title="欢迎来到 Gecko Wu 的博客" type="application/atom+xml">
@@ -53,7 +53,7 @@
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
     <div class="left-col" q-class="show:isShow">
       
-<div class="overlay" style="background: #a9c5d8"></div>
+<div class="overlay" style="background: url(/img/ironman.jpg) 100% 50% / cover no-repeat"></div>
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
@@ -98,7 +98,7 @@
     <div class="mid-col" q-class="show:isShow,hide:isShow|isFalse">
       
 <nav id="mobile-nav">
-  	<div class="overlay js-overlay" style="background: #a9c5d8"></div>
+  	<div class="overlay js-overlay" style="background: url(/img/ironman.jpg) 100% 50% / cover no-repeat"></div>
 	<div class="btnctn js-mobile-btnctn">
   		<div class="slider-trigger list" q-on="click: openSlider(e)"><i class="icon icon-sort"></i></div>
 	</div>
@@ -167,6 +167,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="Electron"><a href="#Electron" class="headerlink" title="Electron"></a>Electron</h3><p>Electron是一个使用JavaScript、HTML和CSS构建桌面应用程序的框架。通过将Chromium和Node.js嵌入其二进制文件，Electron允许您维护一个JavaScript代码库，并创建在Windows、macOS和Linux上工作的跨平台应用程序—无需本地开发经验。<a href="https://www.electronjs.org/docs" target="_blank" rel="noopener">Electron 官网</a></p>
+<a id="more"></a>
 <h3 id="Electron-Vue"><a href="#Electron-Vue" class="headerlink" title="Electron + Vue"></a>Electron + Vue</h3><p>在使用 Electron 进行开发之前，需要安装 <a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">Node.js</a>。</p>
 <p>安装之后可以在终端输入以下命令检查是否正确安装：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br><span class="line"></span><br><span class="line">v14.17.0</span><br></pre></td></tr></table></figure>
@@ -362,6 +363,14 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">css</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">electron</a>
               </li>
              
@@ -370,19 +379,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">css</a>
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Linux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
               </li>
              
               <li class="article-tag-list-item">

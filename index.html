@@ -40,7 +40,7 @@
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
     <div class="left-col" q-class="show:isShow">
       
-<div class="overlay" style="background: #a9c5d8"></div>
+<div class="overlay" style="background: url(/img/ironman.jpg) 100% 50% / cover no-repeat"></div>
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
@@ -85,7 +85,7 @@
     <div class="mid-col" q-class="show:isShow,hide:isShow|isFalse">
       
 <nav id="mobile-nav">
-  	<div class="overlay js-overlay" style="background: #a9c5d8"></div>
+  	<div class="overlay js-overlay" style="background: url(/img/ironman.jpg) 100% 50% / cover no-repeat"></div>
 	<div class="btnctn js-mobile-btnctn">
   		<div class="slider-trigger list" q-on="click: openSlider(e)"><i class="icon icon-sort"></i></div>
 	</div>
@@ -156,42 +156,9 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="Electron"><a href="#Electron" class="headerlink" title="Electron"></a>Electron</h3><p>Electron是一个使用JavaScript、HTML和CSS构建桌面应用程序的框架。通过将Chromium和Node.js嵌入其二进制文件，Electron允许您维护一个JavaScript代码库，并创建在Windows、macOS和Linux上工作的跨平台应用程序—无需本地开发经验。<a href="https://www.electronjs.org/docs" target="_blank" rel="noopener">Electron 官网</a></p>
-<h3 id="Electron-Vue"><a href="#Electron-Vue" class="headerlink" title="Electron + Vue"></a>Electron + Vue</h3><p>在使用 Electron 进行开发之前，需要安装 <a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">Node.js</a>。</p>
-<p>安装之后可以在终端输入以下命令检查是否正确安装：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br><span class="line"></span><br><span class="line">v14.17.0</span><br></pre></td></tr></table></figure>
-<h3 id="创建-Vue-项目"><a href="#创建-Vue-项目" class="headerlink" title="创建 Vue 项目"></a>创建 Vue 项目</h3><p>我们直接使用脚手架工具 <a href="https://cli.vuejs.org/zh/" target="_blank" rel="noopener">vue-cli</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">vue create myproject</span><br><span class="line"></span><br><span class="line">Vue CLI v4.5.13</span><br><span class="line">? Please pick a preset: (Use arrow keys)</span><br><span class="line">&gt; Default ([Vue 2] babel, eslint)</span><br><span class="line">  Default (Vue 3) ([Vue 3] babel, eslint)</span><br><span class="line">  Manually select features</span><br></pre></td></tr></table></figure>
-<p>这里我们直接选择 <code>Default ([Vue 2] babel, eslint)</code>，如果有需要可以选择其他选项进行自定义。</p>
-<h3 id="自动安装-Electron"><a href="#自动安装-Electron" class="headerlink" title="自动安装 Electron"></a>自动安装 Electron</h3><p>使用 vue-cli 自动安装 electron，网络原因有可能会不成功，可选择手动安装。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd myproject</span><br><span class="line">vue add electron-builder</span><br></pre></td></tr></table></figure>
-<p>然后会让你选择什么版本的 Electron，这里我们直接选择最新的版本。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">? Choose Electron Version (Use arrow keys)</span><br><span class="line">  ^11.0.0</span><br><span class="line">  ^12.0.0</span><br><span class="line">&gt; ^13.0.0</span><br></pre></td></tr></table></figure>
-<p>下图表示安装成功：</p>
-<p><img src="./installSuccess.png" alt="安装成功"></p>
-<p><strong>安装完成后，查看项目的目录结构，会发现自动在 src 目录下生成了 backgroug.js 并修改了 package.json。</strong></p>
-<p><img src="./packagejson.png" alt="package.json"></p>
-<h3 id="手动安装-Electron"><a href="#手动安装-Electron" class="headerlink" title="手动安装 Electron"></a>手动安装 Electron</h3><p>修改package.json，添加以下几行</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">"scripts": &#123;</span><br><span class="line">    "electron:build": "vue-cli-service electron:build",</span><br><span class="line">    "electron:serve": "vue-cli-service electron:serve",</span><br><span class="line">    "postinstall": "electron-builder install-app-deps",</span><br><span class="line">    "postuninstall": "electron-builder install-app-deps"</span><br><span class="line">&#125;,</span><br><span class="line">"main": "background.js",</span><br><span class="line">"devDependencies": &#123;</span><br><span class="line">    "electron": "^5.0.6",</span><br><span class="line">    "vue-cli-plugin-electron-builder": "^1.3.5"</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-<p>src下创建文件backgound.js</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">'use strict'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123; app, protocol, BrowserWindow &#125; <span class="keyword">from</span> <span class="string">'electron'</span></span><br><span class="line"><span class="keyword">import</span> &#123; createProtocol &#125; <span class="keyword">from</span> <span class="string">'vue-cli-plugin-electron-builder/lib'</span></span><br><span class="line"><span class="keyword">import</span> installExtension, &#123; VUEJS_DEVTOOLS &#125; <span class="keyword">from</span> <span class="string">'electron-devtools-installer'</span></span><br><span class="line"><span class="keyword">const</span> isDevelopment = process.env.NODE_ENV !== <span class="string">'production'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Scheme must be registered before the app is ready</span></span><br><span class="line">protocol.registerSchemesAsPrivileged([</span><br><span class="line">  &#123; <span class="attr">scheme</span>: <span class="string">'app'</span>, <span class="attr">privileges</span>: &#123; <span class="attr">secure</span>: <span class="literal">true</span>, <span class="attr">standard</span>: <span class="literal">true</span> &#125; &#125;</span><br><span class="line">])</span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">createWindow</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// Create the browser window.</span></span><br><span class="line">  <span class="keyword">const</span> win = <span class="keyword">new</span> BrowserWindow(&#123;</span><br><span class="line">    width: <span class="number">800</span>,</span><br><span class="line">    height: <span class="number">600</span>,</span><br><span class="line">    webPreferences: &#123;</span><br><span class="line">      </span><br><span class="line">      <span class="comment">// Use pluginOptions.nodeIntegration, leave this alone</span></span><br><span class="line">      <span class="comment">// See nklayman.github.io/vue-cli-plugin-electron-builder/guide/security.html#node-integration for more info</span></span><br><span class="line">      nodeIntegration: process.env.ELECTRON_NODE_INTEGRATION,</span><br><span class="line">      contextIsolation: !process.env.ELECTRON_NODE_INTEGRATION</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (process.env.WEBPACK_DEV_SERVER_URL) &#123;</span><br><span class="line">    <span class="comment">// Load the url of the dev server if in development mode</span></span><br><span class="line">    <span class="keyword">await</span> win.loadURL(process.env.WEBPACK_DEV_SERVER_URL)</span><br><span class="line">    <span class="keyword">if</span> (!process.env.IS_TEST) win.webContents.openDevTools()</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    createProtocol(<span class="string">'app'</span>)</span><br><span class="line">    <span class="comment">// Load the index.html when not in development</span></span><br><span class="line">    win.loadURL(<span class="string">'app://./index.html'</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Quit when all windows are closed.</span></span><br><span class="line">app.on(<span class="string">'window-all-closed'</span>, () =&gt; &#123;</span><br><span class="line">  <span class="comment">// On macOS it is common for applications and their menu bar</span></span><br><span class="line">  <span class="comment">// to stay active until the user quits explicitly with Cmd + Q</span></span><br><span class="line">  <span class="keyword">if</span> (process.platform !== <span class="string">'darwin'</span>) &#123;</span><br><span class="line">    app.quit()</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">app.on(<span class="string">'activate'</span>, () =&gt; &#123;</span><br><span class="line">  <span class="comment">// On macOS it's common to re-create a window in the app when the</span></span><br><span class="line">  <span class="comment">// dock icon is clicked and there are no other windows open.</span></span><br><span class="line">  <span class="keyword">if</span> (BrowserWindow.getAllWindows().length === <span class="number">0</span>) createWindow()</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// This method will be called when Electron has finished</span></span><br><span class="line"><span class="comment">// initialization and is ready to create browser windows.</span></span><br><span class="line"><span class="comment">// Some APIs can only be used after this event occurs.</span></span><br><span class="line">app.on(<span class="string">'ready'</span>, <span class="keyword">async</span> () =&gt; &#123;</span><br><span class="line">  <span class="keyword">if</span> (isDevelopment &amp;&amp; !process.env.IS_TEST) &#123;</span><br><span class="line">    <span class="comment">// Install Vue Devtools</span></span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">      <span class="comment">// await installExtension(VUEJS_DEVTOOLS)</span></span><br><span class="line">    &#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">      <span class="built_in">console</span>.error(<span class="string">'Vue Devtools failed to install:'</span>, e.toString())</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  createWindow()</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// Exit cleanly on request from parent process in development mode.</span></span><br><span class="line"><span class="keyword">if</span> (isDevelopment) &#123;</span><br><span class="line">  <span class="keyword">if</span> (process.platform === <span class="string">'win32'</span>) &#123;</span><br><span class="line">    process.on(<span class="string">'message'</span>, (data) =&gt; &#123;</span><br><span class="line">      <span class="keyword">if</span> (data === <span class="string">'graceful-exit'</span>) &#123;</span><br><span class="line">        app.quit()</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    process.on(<span class="string">'SIGTERM'</span>, () =&gt; &#123;</span><br><span class="line">      app.quit()</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>先删除之前的<code>node_modules</code>，重新安装依赖即可。</p>
-<h3 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h3><p>自动安装的项目默认会安装 vue devtools 插件，需要科学上网才能安装，否则会自动尝试 5 次，这里我们先把安装命令注释掉即可。</p>
-<p>在<code>\myproject\src\background.js</code>中把下面这行注释掉：</p>
-<p><img src="./installExtension.png" alt="安装插件"></p>
-<p>启动项目：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run electron:serve</span><br></pre></td></tr></table></figure>
-<p>启动成功后会自动弹出窗口：</p>
-<p><img src="./window.png" alt="窗口"></p>
-<h3 id="打包"><a href="#打包" class="headerlink" title="打包"></a>打包</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run electron:build</span><br></pre></td></tr></table></figure>
-<p>第一次会遇到下面这种情况，依赖下载不下来：</p>
-<p><img src="downloadfail.png" alt="下载失败"></p>
-<p>解决办法是手动下载这个文件，然后解压到<code>C:\Users\86157\AppData\Local\electron-builder\Cache\winCodeSign</code>文件夹下：</p>
-<p><img src="./unzip.png" alt="解压文件"></p>
-<p>再次执行打包命令：</p>
-<p><img src="./build.png" alt="打包成功"></p>
-<p>打包成功之后可以在<code>\myproject\dist_electron</code>文件夹中看到打包出来的.exe 文件。</p>
-<p><img src="./exe.png" alt="exe文件"></p>
-
+        
+          <a class="article-more-a" href="2021/07/29/electron-vue开发跨平台桌面应用/#more">more >></a>
+        
       
 
       
@@ -863,6 +830,14 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">css</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">electron</a>
               </li>
              
@@ -871,19 +846,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">css</a>
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Linux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
               </li>
              
               <li class="article-tag-list-item">
